@@ -1,0 +1,141 @@
+
+
+Inner classes
+
+Ein Auto (Klasse) habe einen Motor. Tritt man beim Auto aufs Gaspedal (gibGas(int gewichtaufgaspedal)), so wird auf der Motor-Klasse die Methode spritzufuhr(int prozentvonmaximal) aufgerufen.
+Implementiere den Motor als innere Klasse, einmal als Member Class, einmal als Lokale Klasse und einmal als Anonyme Klasse.
+Bei welchen inneren Klassen besteht die Möglichkeit, dass der Mechaniker direkt von außen die Methode spritzufuhr() aufruft?
+
+Interfaces
+
+Sie wollen eine Software schreiben, die eine Datenbank nutzt. Allerdings wollen Sie in Ihrem Code nicht festlegen, welche konkrete Datenbank später eingesetzt wird (Oracle, DB2, MySQL etc.). Sie möchten aber, dass Ihre Datenbank Daten (Strings oder Object) abspeichern und wieder laden kann.
+Implementieren Sie dies mit Hilfe eines Interfaces. Die implementierten Methoden müssen über keine wirklich Funktionalität verfügen.
+Sie benötigen letztlich
+Ein Interface
+Zwei Klassen, die das Interface implementieren (z.B. "DB2", "Oracle" oder "MySQL")
+Eine Klasse (z.B. "Applikation"), die variabel mit einer der Implementierungen des Interfaces arbeitet
+Ggf. eine "Start-Klasse"
+
+equals 
+
+Gegeben sei eine Klasse Päckchen mit zwei Attributen vom Typ Adresse und Groesse.
+Adresse ist eine Klasse mit den Attributen Empfänger (String), Straße (String), Postleitzahl (int) und Ort (String). Im Rahmen dieser Aufgabe gibt es kein Land, das zu berücksichtigen wäre.
+Groesse ist eine Klasse mit den Attributen Länge in cm (int), Breite (int), Höhe (int) und Gewicht in kg (float).
+Implementieren Sie alle drei Klassen inklusive der notwendigen equals()-Methoden. Implementieren Sie dabei die equals()-Methode für die Klasse Päckchen aus Sicht des Postbeamten, der das Päckchen frankieren (nicht ausliefern!) muss.
+
+Hashfunktion
+
+Über welche Eigenschaften sollte eine Hashfunktion verfügen?
+Schreibe jeweils eine einfache Hashfunktion für die Klassen MyInteger, MyString und Auto. Die Klasse MyInteger verfüge über ein Attribut int, die Klasse MyString über ein Attribut String und die Klasse Auto über die Attribute fahrgestellnummer (int) (eindeutig) und typ (String).
+Stelle fest, wie die hashCode() Methode der Klasse java.lang.String implementiert ist. (Sourcen von Java lesen)
+
+
+Enums
+
+Teil a)
+Sie wollen nicht nur den Treibstoffverbrauch der Fahrzeuge erfassen, sondern auch die Treibstoffsorte (Super, Normal, Diesel). Daher möchten Sie die Fahrzeuge mit der jeweiligen Treibstoffsorte initialisieren und sicher sein, dass nur eine der drei Treibstoffsorten wählbar ist.
+Implementieren Sie dies als interne oder externe Enum. Wie hätten Sie die Aufgabe ohne Enums gelöst?
+
+Teil b)
+Iterieren Sie über die Enum-Werte und geben Sie dabei die verschiedenen Treibstoffsorten aus. Allerdings soll die Ausgabe anders lauten (High-Power-Super, Turbo-Normal und Renn-Diesel). Ändern Sie die Enum entsprechend.
+Schließlich wollen Sie auch die Oktanzahl (100, 98 und 95) ausgeben. Welche Möglichkeit haben Sie dazu?
+Mit dem Teil b) können Sie Folgendes üben:
+Enums mit Methoden
+Enums mit Attributen
+Iteration über Enum-Werte
+
+
+Exception handling 
+
+Gegeben sei eine Klasse PoorMansDb, mit der man Strings unter einem Schlüssel in eine Datei schreiben und von dort wieder lesen kann. Sie stellt somit eine äußerst primitive Datenbank dar. Leider ist die PoorMansDb auch etwas fehlerträchtig, nicht jeder Zugriff ist erfolgreich. Es ist NICHT notwendig, dass Sie die Klasse PoorMansDb lesen oder gar verstehen. Sie müssen Sie nur benutzen.
+Schreiben Sie eine Klasse, die den Zugriff auf diese Datenbank kapselt (z.B. eine Klasse DBWrapper). Der DBWrapper soll folglich auch Methoden wie speichern, laden und ändern enthalten. Diese Methoden rufen die Methoden save, load und update der Klasse PoorMansDb auf. Dabei müssen sie mit der Unzuverlässigkeit der PoorMansDb umgehen können, indem sie beim Auftreten von Fehlern mehrere Versuche unternehmen, bevor sie selbst einen Fehler werfen.
+Noch ein Tipp: Legen Sie im Zweifelsfall eine leere Textdatei an. Wählen Sie ein Verzeichnis, in dessen Namen/Pfad keine Leerzeichen enthalten sind. Beachten Sie, dass der Editor auf dem Mac eine RTF-Datei erzeugt (selbst wenn die Dateiendung "txt" ist), falls man in der Menüleiste nicht explizit  "Format -> in reinen Text umwandeln" wählt. Nutzen Sie alternativ den Textwrangler.
+
+Teilaufgabe b)
+Die folgenden Teilaufgaben haben mit der PoorMansDb nichts mehr zu tun.
+Schreiben Sie eine eigene Methode public int halbiere(int zahl), die einen Fehler wirft, wenn eine ungerade Zahl übergeben wird. Welche Exception schlagen Sie vor? Schreiben Sie ein Programm bzw. eine main-Methode, mit dem Sie diese Methode aufrufen und prüfen können.
+
+
+Annotations
+
+Sie haben die Aufgabe gestellt bekommen, einen einfachen Codegenerator zu schreiben, mit dem SQL-Statements erstellt werden können. Dabei sollen die Attribute/Klassenvariablen von Klassen ausgelesen werden und anhand derer Annotations CREATE-TABLE-Ausdrücke mit Namen der Tabellenspalte und dem Datentyp (wie in Annotations festgelegt) geschrieben werden.
+Z.B. so für eine Klasse Auto, welche die Attribute Fahrgestellnummer (int) und Typ (String) hat folgendes SQL-Statement erzeugt werden:
+ 
+CREATE TABLE auto (fahrgestellnr INTEGER, type VARCHAR (64));
+Beachten Sie, dass der Spaltenname nicht dem Attributnamen entsprechen muss, sondern über die Annotation bestimmt wird.
+
+Gehen Sie wie folgt vor
+Legen Sie ein neues Package (optional auch ein neues Eclipse-Projekt) an.
+Schreiben Sie eine Annotation SqlAttribute mit den Methoden
+public boolean persist() und
+public SQLType sqlType(), wobei SQLType eine Enum mit den Werten INTEGER, FLOAT und VARCHAR sei.
+Wählen Sie für diese Annotation ein geeignetes @Target und eine geeignete @Retention
+Schreiben Sie eine einfache Klasse. Sie können hier das strapazierte Beispiel Studentin mit den Attributen namen:String und matrikelnummer:int wählen. Fügen Sie den Attributen die Annotations hinzu und wählen Sie einen geeigneten sqlType. Beide Attribute sollen persistiert werden, weshalb persist() true liefern sollte (dies kann auch als default auf der Annotation bereits definiert sein).
+Schreiben Sie eine Klasse Codegenerator, welche
+die Attribute (getDeclaredFields()) ausliest,
+von jedem Attribut die Annotation SQLType holt,
+von jedem Attribut dessen Namen ausliest und zum Schluss
+ein SQL-Statement erzeugt wie oben beschrieben.
+
+
+JavaDocs
+
+Schreibe die JavaDocs für eine Funktion, welche Zufallswerte zwischen einer unteren Grenze a und einer oberen Grenze b mit einer Auflösung (d.h. dem kleinst möglichen Abstand zweier ungleicher Zufallszahlen) von c zurückliefert.
+Beispiel: a=15, b=40, c=5. Die Funktion würde zufällig eine der folgenden Zahlen zurückliefern: 15, 20, 25, 30, 35, 40.
+
+public double getZufallszahl(double a, double b, double c) throws IllegalArgumentException
+Dabei kann ein Fehlergeworfen werden, wenn b <= a ist.
+Erzeuge die JavaDocs (HTML-Dateien) mit Eclipse.
+Achtung: Es geht nicht darum, dass Sie den Code implementieren! Sie brauchen nur die JavaDoc zu schreiben.
+
+
+
+Multithreading
+
+Schreiben Sie eine sehr einfache Klasse AusgabeThread, die von Thread erbt und in ihrem Konstruktor den Text übergeben bekommt, den sie ausgeben soll. Sie gibt den Text 10 mal aus, wartet dazwischen aber für eine zufällig lange (max. 1 Sekunde) Zeitspanne. In einer Startklasse werden drei dieser AusgabeThreads mit verschiedenen Texten aufgerufen.
+Erst nachdem alle AusgabeThreads zu Ende gelaufen sind, soll das sich die Startklasse mit einer Meldung "habe fertig" beenden.
+
+
+Regular Expressions
+
+Schreiben Sie eine Klasse EmailCheck, die eine Methode public static boolean checkValidAdress(String email) hat. Diese Methode soll Strings darauf hin prüfen, ob sie gültige E-Mailadressen representieren.
+Eine E-Mailadresse sei gültig falls
+Ein @-Zeichen enthalten ist
+Davor ein oder mehrere Zeichen stehen
+Das erste Zeichen nach dem @ muss ein Buchstabe sein
+Bindestriche sind erlaubt
+Subdomains sind erlaubt
+Es sind folgende Topleveldomains gültig: de, info, org, com, net
+Schreiben Sie eine (JUnit-) Testklasse, die folgende Checks erfolgreich durchführt:  
+ 
+assertTrue(EmailCheck.checkValidAdress("mail@test.org"));  
+assertTrue(EmailCheck.checkValidAdress("super-student@inf.htwg-konstanz.de"));  
+assertTrue(EmailCheck.checkValidAdress("rookie@inf-sem1.htwg-konstanz.de"));  
+assertTrue(EmailCheck.checkValidAdress("4939@j999.gmx.de"));  
+assertTrue(EmailCheck.checkValidAdress("1@a.net"));  
+assertFalse(EmailCheck.checkValidAdress("mail@5aaa.org"));  
+assertFalse(EmailCheck.checkValidAdress("mail.5aaa.org"));  
+
+
+
+Regular Expressions 2
+
+Verschiedene Aufgaben
+Kopieren Sie sich den Gesetzestext zu Medizinprodukten auf Ihre Festplatte.
+Finden Sie in diesem Text alle Worte, die mit einen Kleinbuchstaben beginnen.
+Ersetze Sie in diesem Text alle runden Klammern, die eine Zahl umgeben (z.B. "(2)") durch die entsprechenden eckigen Klammern.
+Nach was sucht (wahrscheinlich) dieser Ausdruck: "\d\d\.\d\d\.\d\d\d\d"?
+Wie würden Sie nach einem Euro-Betrag suchen und den in eine Variable einlesen?
+Was findet dieser Ausdruck: "Re\s*(\[\d+\])?:" Wo kommt er wahrscheinlich zum Einsatz?
+Erfinden Sie eine eigene Aufgabe.
+
+
+Java Collection Framework (HashSet TreeMap)
+
+Gegen sei das unten gezeigte Klassendiagramm. Setzen Sie dieses in Java-Code um.
+Fügen Sie auf den Klassen Bank und Kunde die notwendigen Methoden ein.
+Achten Sie darauf, dass eine Assoziation nur einseitig navigierbar ist.
+Setzen Sie eine 1:n Beziehung mit einer Klasse, die das Interface Collection (oder ein davon erbendes Interface) implementiert, die andere Beziehung mit einer Klasse, die das Interface Map (oder ein davon erbendes Interface) implementieren.
+Testen Sie mit der Start-Klasse ihren Code und geben Sie nach jeder Einfüge- oder Lösch-Operation alle Kunden mit deren Konten aus.
+
+
