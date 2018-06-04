@@ -1,0 +1,12 @@
+a)  Programmieren Sie eine Klasse Person mit folgenden Attributen:  - name - telefonnummer 
+- geburtsdatum 
+
+Definieren Sie für jedes Attribut eine get- und eine set-Methode. 
+Definieren Sie eine Methode read(), die die Attribute von der Tastatur abfragt. 
+
+Das Geburtsdatum soll die Form TT/MM/JJJJ haben. Implementieren Sie eine Methode dateTest(), die für ein Datum die Korrektheit überprüft. Zur Vereinfachung brauchen Sie Schaltjahre nicht zu berücksichtigen. 
+Definieren Sie die Methode toString(), die eine textuelle Beschreibung mit sämtlichen Attributen für eine Person generiert. 
+
+b)  Definieren Sie die Klasse Studentals Unterklasse von Person. Die Klasse Student hat zusätzlich das Attribut matrikelnummer. Definieren Sie eine öffentliche get- und set-Methode für dieses Attribut. Überschreiben Sie die Methoden read() und toString(). 
+
+c)  Definieren Sie eine main-Methode, die ein Array von vier Studenten anlegt und deren Attribute über die Methode read() von der Tastatur einliest.  Anschließend soll im Array ein Student gesucht werden, dessen Matrikelnummer über die Tastatur eingelesen wird. Falls der Student gefunden wird, werden seine Daten ausgegeben, andernfalls wird ausgegeben, dass ein Student mit dieser Nummer nicht existiert.  

@@ -1,0 +1,9 @@
+Definieren Sie eine Klasse StockTickArray, um eine Menge von Kursdaten von Aktien zu verwalten. Verwenden Sie dazu eine Klasse StockTick mit den privaten Attributen symbol vom Typ string (Kürzel für den Firmennamen) und kurs vom Typ int. Der Benutzer soll durch Angabe einer Anzahl die Array-Länge festlegen können. Es muss mo ̈glich sein, die Daten einzugeben und auf dem Bildschirm auszugeben. 
+Implementieren Sie für die Klasse StockTickArray eine Methode, die einen speziellen Sortieralgorithmus durch Methodenaufruf ausführt: void sortStockTickArray();
+Implementieren Sie zwei spezielle Sortieralgorithmen, die der Benutzer auswählen kann: Sortieren durch Einfügen mit sequentieller Suche und Sortieren durch Einfügen mit binärer Suche. 
+Für das Sortieren durch Einfügen mit binärer Suche entwickeln Sie eine extra Methode für das Binäre Suchen in einem Array zwischen beliebig vorgebbaren Grenzen. Diese Methode soll beim Sortieren immer bei Bedarf aufgerufen werden. 
+
+Das Sortieren soll sowohl alphabetisch nach dem Firmenkürzel als auch nach dem Kurs mo ̈glich sein. 
+Erzeugen Sie ein Array von 100 StockTick-Objekten unter Zuhilfenahme von Zufallszahlen (Klasse Random aus java.util). Für das Symbol des Firmennamens wählen Sie die 10 Möglichkeiten (IBM, CSCO, HPQ, GOOG, ORCL, GPRO, BABA, AAPL, SAP, MSFT) zufällig aus, für den Kurs verwenden Sie jeweils eine Zufallszahl z mit 60 ≤ z ≤ 70.  Testen Sie mit diesem Datensatz die beiden Sortiermethoden. Sortieren Sie zunächst nach dem Kurs und sortieren Sie das so sortierte Array nach dem Firmennamen. 
+
+Erweitern Sie die Sortiermethoden so, dass sie nach einem Sortiervorgang die Anzahl der durchgeführten Vergleiche ausgeben. Erzeugen Sie zehnmal ein neues Array mit Zufallszahlen wie oben und geben Sie für jedes der beiden Sortierverfahren die durchschnittliche Anzahl durchgeführter Vergleiche aus.   Gestalten Sie das Programm so, dass man auf dem Bildschirm das Wichtigste sehen kann!  
